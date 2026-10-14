@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Kind of Fashionista Are You?</title>
+  <meta name="description" content="A funny fashion quiz. Ten questions, six questionable personalities, zero taste required.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-hanger" viewBox="0 0 64 48">
+      <path d="M32 6a6 6 0 1 1 6 6c-3 0-6 2-6 6v3" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M32 21 4 38c-1 2 0 5 3 5h50c3 0 4-3 3-5Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ic-tape" viewBox="0 0 64 64">
+      <rect x="6" y="18" width="52" height="28" rx="6" fill="var(--mustard)" stroke="currentColor" stroke-width="3"/>
+      <path d="M14 18v8M22 18v14M30 18v8M38 18v14M46 18v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <path d="M58 32h4" stroke="currentColor" stroke-width="3"/>
+    </symbol>
+    <symbol id="ic-glasses" viewBox="0 0 64 40">
+      <path d="M2 14h60" stroke="currentColor" stroke-width="3"/>
+      <ellipse cx="18" cy="22" rx="14" ry="11" fill="currentColor"/>
+      <ellipse cx="46" cy="22" rx="14" ry="11" fill="currentColor"/>
+      <path d="M32 18c0-3-2-5-4-5m8 5c0-3 2-5 4-5" stroke="currentColor" stroke-width="3" fill="none"/>
+      <ellipse cx="12" cy="18" rx="4" ry="2" fill="#fff" opacity=".6"/>
+    </symbol>
+    <symbol id="ic-bag" viewBox="0 0 64 64">
+      <path d="M12 22h40l-3 34H15Z" fill="var(--pink)" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M22 22v-6a10 10 0 0 1 20 0v6" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M24 40h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-needle" viewBox="0 0 64 64">
+      <path d="M10 54 50 14" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="51" cy="13" rx="4" ry="6" transform="rotate(45 51 13)" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M56 10c6 10-4 20 4 30s-4 14-14 12" fill="none" stroke="var(--pink)" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-heel" viewBox="0 0 64 64">
+      <path d="M8 46c6-14 18-28 40-32 4 0 6 4 4 8l-8 10c-4 4-4 8 0 14l8 2v6H44l-10-8c-6 4-14 6-26 2Z" fill="var(--pink)" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M50 44v14" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-cat" viewBox="0 0 80 64">
+      <path d="M4 60c6-14 20-16 36-14s32 2 36 14Z" fill="var(--lilac)" stroke="currentColor" stroke-width="3"/>
+      <path d="M12 48c4-6 14-8 26-6s24 0 30 6" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M40 46c-8 0-14-6-14-14l-2-14 10 6c4-2 8-2 12 0l10-6-2 14c0 8-6 14-14 14Z" fill="#111" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="35" cy="32" r="2.5" fill="var(--mustard)"/><circle cx="45" cy="32" r="2.5" fill="var(--mustard)"/>
+      <path d="M38 38h4l-2 3Z" fill="var(--pink)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="hero" id="hero">
+  <div class="hero-text">
+    <p class="kicker"><svg class="ic" aria-hidden="true"><use href="#ic-needle"/></svg> A deeply unscientific quiz</p>
+    <h1>What Kind of <em>Fashionista</em> Are You?</h1>
+    <p class="lede">Ten questions. Six personalities. One brutally honest magazine cover with your name on it. Dress code: whatever you are wearing right now, and yes, we noticed.</p>
+    <button class="btn btn-primary" id="start-btn">Start the Quiz <svg class="ic" aria-hidden="true"><use href="#ic-heel"/></svg></button>
+    <ul class="motifs" aria-hidden="true">
+      <li><svg class="ic"><use href="#ic-hanger"/></svg></li>
+      <li><svg class="ic"><use href="#ic-tape"/></svg></li>
+      <li><svg class="ic"><use href="#ic-glasses"/></svg></li>
+      <li><svg class="ic"><use href="#ic-bag"/></svg></li>
+      <li><svg class="ic"><use href="#ic-heel"/></svg></li>
+      <li><svg class="ic"><use href="#ic-cat"/></svg></li>
+    </ul>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 320 360" class="hero-svg">
+      <path d="M160 20 40 340h240Z" fill="var(--mustard)" opacity=".35"/>
+      <path d="M160 20 90 340h140Z" fill="var(--mustard)" opacity=".5"/>
+      <ellipse cx="160" cy="335" rx="130" ry="14" fill="var(--mustard)" opacity=".5"/>
+      <rect x="130" y="4" width="60" height="26" rx="6" fill="#111"/>
+      <circle cx="160" cy="18" r="7" fill="var(--pink)"/>
+      <path d="M135 40h50" stroke="#111" stroke-width="4"/>
+      <g class="wobble">
+        <circle cx="160" cy="116" r="30" fill="var(--cream)" stroke="#111" stroke-width="4"/>
+        <path d="M148 118 q6 -8 12 0 M164 118 q6 -8 12 0" stroke="#111" stroke-width="3" fill="none"/>
+        <path d="M152 130 q8 -6 16 2" stroke="#111" stroke-width="3" fill="none"/>
+        <rect x="128" y="150" width="64" height="90" rx="14" fill="var(--pink)" stroke="#111" stroke-width="4"/>
+        <path d="M128 165 q-28 -20 -40 10 l-6 30" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M192 165 q28 -20 40 10 l6 30" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="82" cy="207" r="9" fill="var(--cream)" stroke="#111" stroke-width="4"/>
+        <circle cx="238" cy="207" r="9" fill="var(--cream)" stroke="#111" stroke-width="4"/>
+        <path d="M138 240v70M182 240v70" stroke="#111" stroke-width="12" stroke-linecap="round"/>
+        <rect x="124" y="304" width="30" height="16" rx="6" fill="#111"/>
+        <rect x="168" y="304" width="30" height="16" rx="6" fill="var(--lilac)" stroke="#111" stroke-width="3"/>
+        <text x="206" y="100" font-family="Playfair Display, serif" font-weight="900" font-size="34" fill="#111">?</text>
+        <text x="90" y="88" font-family="Playfair Display, serif" font-weight="900" font-size="26" fill="var(--pink)">?</text>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<main id="app" class="app" hidden>
+  <div class="rail" aria-label="Progress">
+    <div class="rail-bar"></div>
+    <div class="rail-hangers" id="rail-hangers"></div>
+    <p class="rail-label" id="rail-label">Question 1 of 10</p>
+  </div>
+
+  <section class="question-card" id="question-card" aria-live="polite">
+    <p class="q-number" id="q-number"></p>
+    <h2 class="q-text" id="q-text"></h2>
+    <div class="answers" id="answers" role="group" aria-labelledby="q-text"></div>
+  </section>
+</main>
+
+<section id="result" class="result" hidden>
+  <div class="curtain curtain-left" aria-hidden="true"></div>
+  <div class="curtain curtain-right" aria-hidden="true"></div>
+  <div class="sequins" id="sequins" aria-hidden="true"></div>
+
+  <article class="cover" id="cover">
+    <header class="cover-masthead">
+      <span class="masthead-small">The Fashionista Quarterly</span>
+      <span class="masthead-big">YOU</span>
+      <span class="masthead-small" id="cover-issue">Special Issue</span>
+    </header>
+    <div class="cover-art" id="cover-art"></div>
+    <ul class="cover-lines" id="cover-lines"></ul>
+    <h2 class="cover-headline" id="cover-headline"></h2>
+    <p class="cover-tagline" id="cover-tagline"></p>
+    <div class="barcode" aria-hidden="true" id="barcode"></div>
+  </article>
+
+  <div class="result-body">
+    <p class="result-desc" id="result-desc"></p>
+    <dl class="facts">
+      <div><dt><svg class="ic"><use href="#ic-hanger"/></svg> Signature look</dt><dd id="fact-look"></dd></div>
+      <div><dt><svg class="ic"><use href="#ic-needle"/></svg> Fatal flaw</dt><dd id="fact-flaw"></dd></div>
+      <div><dt><svg class="ic"><use href="#ic-bag"/></svg> Spirit accessory</dt><dd id="fact-accessory"></dd></div>
+    </dl>
+    <div class="runner-up" id="runner-up"></div>
+    <div class="actions">
+      <button class="btn btn-primary" id="share-btn">Share your result <svg class="ic"><use href="#ic-glasses"/></svg></button>
+      <button class="btn btn-ghost" id="retake-btn">Retake, I was lying</button>
+    </div>
+    <p class="toast" id="toast" role="status"></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <svg class="ic" aria-hidden="true"><use href="#ic-cat"/></svg>
+  Made with questionable taste by Olga ·
+  <a href="https://github.com/olgaW26/fashionista" target="_blank" rel="noopener">Source on GitHub</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
